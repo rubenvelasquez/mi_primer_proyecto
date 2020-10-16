@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Login</p>
+    <p>Login tercera parte</p>
     <ul>
     <?php foreach ($menu as $item ): ?>
        <li><a href="<?= $item['url'] ?>"><?= $item['title'] ?></a></li>
