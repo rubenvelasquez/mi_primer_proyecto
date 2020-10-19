@@ -3,72 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-<!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
-    <p>Registro</p>
-    <ul>
-    <?php foreach ($menu as $item): ?>
-    <li><a href="<?= $item['url'] ?>"><?= $item['title'] ?></a></li>
-    <?php endforeach; ?>
-    </ul>
-    <!-- formulario -->
-    <form action="<?= base_url('index.php/registro/create') ?>">
-    
-  <div class="form-group">
-    <label for="">Nombres</label>
-    <input type="text" name="nombres" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nombres">
-    
-  </div>
 
-  <div class="form-group">
-    <label for="">Apellido Paterno</label>
-    <input type="text" name="ap" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Apellido Paterno">
-    
-  </div>
 
-  <div class="form-group">
-    <label for="">Apellido Materno</label>
-    <input type="text" name="am" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Apellido Materno">
-    
-  </div>
+<a class="btn btn-primary" href="<?=base_url('registro')?>" role="button">Adicionar usuario</a>
+<a class="btn btn-primary" href="<?=base_url('vistatabla')?>" role="button">Listar Usuario</a>
+     
 
-  <div class="form-group">
-    <label for="">CI</label>
-    <input type="text" name="ci" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ci">
-    
-  </div>
+   <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form class="form-horizontal" method="post" action="<?=base_url('index.php/registro/create')?>" method="POST">
+                    <fieldset>
+                        <legend class="text-center header"> </legend>
 
-  <label for="exampleInputEmail1">Email address</label>
-    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email">
-  
-  </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon">Nombres</i></span>
+                            <div class="col-md-8">
+                                <input id="fname" name="nombres" type="text" placeholder="Nombres" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon">Apellido Paterno</i></span>
+                            <div class="col-md-8">
+                                <input id="lname" name="ap" type="text" placeholder="Apellido Paterno" class="form-control">
+                            </div>
+                        </div>
 
-  <div class="form-group">
-    <label for="">Constraseña</label>
-    <input type="password" name="contraña" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="contraseña">
-    
-  </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon">Apellido Materno</i></span>
+                            <div class="col-md-8">
+                                <input id="email" name="am" type="text" placeholder="Apellido Materno" class="form-control">
+                            </div>
+                        </div>
 
-  <div class="form-group">
-    <label for="exampleInputPassword1">Tipo Usuario</label>
-    <br>
-    <select>
-        <option value="">Usuario Simple</option>
-        <option value="">Usuario Evento</option>
-    </select>
-  </div>
-  
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-  <!--cerrar formulario-->
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon">CI</i></span>
+                            <div class="col-md-8">
+                                <input id="phone" name="ci" type="text" placeholder="ci" class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon">Email</i></span>
+                            <div class="col-md-8">
+                                <input id="phone" name="email" type="email" placeholder="email" class="form-control">
+                            </div>
+                        </div>
 
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon">Contraseña</i></span>
+                            <div class="col-md-8">
+                                <input id="phone" name="password" type="password" placeholder="contraseña" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon">Tipo Usuario</i></span>
+                            <div class="col-md-8">
+                                <select name="tipousuario" id="">
+                                <option value="">Usuario simple</option>
+                                <option value="">Usuario Administrador</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Adicionar usuario</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<?= isset($smg) ? $smg : ''?>
 </body>
 </html>
